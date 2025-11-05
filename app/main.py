@@ -1,7 +1,5 @@
 from fastapi import FastAPI
+from app.routes import router
 
 app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"mensaje": "¡Tu API está funcionando en Windows!"}
+app.include_router(router)
